@@ -1,11 +1,77 @@
-@import 'tailwindcss';
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.banner h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* Header Styles */
+.top-bar {
+    font-size: 0.9rem;SS
+}
+
+.navbar-brand {
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #333 !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #d32f2f !important;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d32f2f;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.search-box .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.badge {
+    font-size: 0.6rem;
+}
+
+@media (max-width: 992px) {
+    .search-box {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+    
+    .navbar-nav {
+        padding-top: 10px;
+    }
 }
