@@ -1,61 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cấu trúc Thư mục Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel là một framework PHP theo kiến trúc MVC (Model - View - Controller), với cấu trúc thư mục rõ ràng và linh hoạt. Dưới đây là mô tả chi tiết các thư mục chính trong một dự án Laravel:
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📁 app/
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Chứa phần logic chính của ứng dụng:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- `Console/`: Các lệnh Artisan tuỳ chỉnh.
+- `Exceptions/`: Quản lý lỗi và ngoại lệ.
+- `Http/`:
+  - `Controllers/`: Xử lý các request từ người dùng.
+  - `Middleware/`: Lớp trung gian xử lý request.
+  - `Requests/`: Validate dữ liệu gửi lên.
+- `Models/`: Các lớp đại diện cho bảng trong cơ sở dữ liệu.
+- `Providers/`: Các service provider được sử dụng để khởi tạo ứng dụng.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📁 bootstrap/
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- `app.php`: File khởi tạo ứng dụng Laravel.
+- `cache/`: Cache cho routes, config, view,...
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📁 config/
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Chứa tất cả các file cấu hình:
 
-### Premium Partners
+- `app.php`: Cấu hình chung của ứng dụng.
+- `database.php`: Cấu hình cơ sở dữ liệu.
+- `auth.php`: Cấu hình xác thực người dùng.
+- `mail.php`, `queue.php`, v.v.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 📁 database/
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- `migrations/`: Định nghĩa cấu trúc bảng CSDL.
+- `seeders/`: Thêm dữ liệu mẫu vào CSDL.
+- `factories/`: Tạo dữ liệu giả để test.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📁 public/
 
-## Security Vulnerabilities
+Thư mục duy nhất truy cập được từ bên ngoài:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `index.php`: Điểm vào chính của ứng dụng.
+- Chứa tài nguyên tĩnh: hình ảnh, CSS, JS,...
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📁 resources/
+
+Chứa các tài nguyên chưa được biên dịch:
+
+- `views/`: Các file giao diện Blade.
+- `lang/`: File ngôn ngữ cho đa ngôn ngữ.
+- `js/`, `css/`: Chứa mã nguồn front-end.
+
+---
+
+## 📁 routes/
+
+Chứa các định nghĩa tuyến (route) của ứng dụng:
+
+- `web.php`: Route dành cho giao diện web.
+- `api.php`: Route dành cho API.
+- `console.php`: Route cho các lệnh Artisan.
+- `channels.php`: Route cho broadcast (nếu dùng).
+
+---
+
+## 📁 storage/
+
+Chứa dữ liệu phát sinh khi chạy ứng dụng:
+
+- `logs/`: Ghi log lỗi.
+- `app/`: File upload, file tạm.
+- `framework/`: View cache, session,...
+
+---
+
+## 📁 tests/
+
+Thư mục chứa các file kiểm thử (test):
+
+- `Feature/`: Test tính năng.
+- `Unit/`: Test đơn vị (unit test).
+
+---
+
+## 📁 vendor/
+
+Chứa các thư viện được cài đặt qua Composer, bao gồm cả core của Laravel và các package bên ngoài.
+
+---
+
+## Gợi ý thêm:
+
+Bạn có thể chạy các lệnh sau để hiểu hơn về cấu trúc:
+```bash
+php artisan list      # Xem danh sách các lệnh Artisan
+php artisan route:list  # Xem danh sách route
