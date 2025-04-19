@@ -1,0 +1,45 @@
+/* Banner */
+.banner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sản phẩm nổi bật */
+#products .col-md-4 {
+    margin-bottom: 30px;
+}
+.carousel-item {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+#products .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+/* Giới thiệu */
+.about {
+    background-color: #f8f9fa;
+}
+
+/* Liên hệ */
+.contact {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+}
+.carousel-item img {
+    object-fit: cover;
+    height: 400px; /* Hoặc chiều cao bạn muốn */
+    width: 100%;
+}
