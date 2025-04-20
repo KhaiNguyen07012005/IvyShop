@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
-   
-        $products = Product::all();
-        return view('home', compact('products'));
+    public function index()
+    {
+        // Lấy tất cả sản phẩm
+        $products = Product::all(); 
+        
+        // Truyền sản phẩm sang view
+        return view('Home.home', compact('products'));
     }
-    
 }

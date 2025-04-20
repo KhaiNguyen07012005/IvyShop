@@ -29,9 +29,9 @@
 
         <!-- Logo ở giữa -->
         <div>
-            <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" height="40">
-            </a>
+        <a href="{{ route('home.page') }}">
+             <img src="{{ asset('images/logo.png') }}" alt="Logo" height="40">
+        </a>
         </div>
 
         <!-- Menu phải -->
@@ -42,7 +42,8 @@
                 <i class="fa fa-search position-absolute top-50 end-0 translate-middle-y me-2 text-secondary"></i>
             </div>
             <a href="#" class="text-dark"><i class="fa fa-headphones fa-lg"></i></a>
-            <a href="#" class="text-dark"><i class="fa fa-user fa-lg"></i></a>
+            <a href="{{ route('login') }}" class="text-dark"><i class="fa fa-user fa-lg"></i></a>
+
             <a href="#" class="text-dark position-relative">
                 <i class="fa fa-shopping-bag fa-lg"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark text-white">
