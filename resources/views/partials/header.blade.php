@@ -41,7 +41,9 @@
                 <input type="text" class="form-control form-control-sm" placeholder="TÌM KIẾM SẢN PHẨM" style="width: 220px;">
                 <i class="fa fa-search position-absolute top-50 end-0 translate-middle-y me-2 text-secondary"></i>
             </div>
+            <!-- các đường dẫn cho nó  -->
             <a href="#" class="text-dark"><i class="fa fa-headphones fa-lg"></i></a>
+
             <a href="{{ route('login') }}" class="text-dark"><i class="fa fa-user fa-lg"></i></a>
 
             <a href="#" class="text-dark position-relative">

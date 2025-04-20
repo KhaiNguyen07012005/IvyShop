@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ward extends Model
 {
-    protected $fillable = ['name', 'city_id'];
+    protected $fillable = ['id', 'name', 'city_id'];
+    public $timestamps = true;
 }
-?>

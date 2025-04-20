@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function index()
     {
         // Lấy tất cả sản phẩm
-        $products = Product::all(); 
+        $products = Product::all();
         
         // Truyền sản phẩm sang view
         return view('Home.home', compact('products'));
